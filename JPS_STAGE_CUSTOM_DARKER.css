@@ -25,20 +25,20 @@
 	 --box-bg-color: #1e2426; /*Only Current use is an outline of "New Messages #" */
 	 --table-background-color: #1e2426;
 	 --alternate-background-color: #262d30; /*Used for every second table row + read torrents*/
-	 --header-color: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-	 --menu-gradient: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+	 --header-color: linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%);
+	 --menu-gradient: linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%);
 	 --accent-color: #A082BD;
 	 --webkit-color: #7C3861;
 	 --new-torrent: #262d30;
 	 --torrent-child: #2e363a;
 	 --box-shadow: pink;
 	 --sec-bg-color: #f5f5f5;
-    --input-border-color: rgba(0, 0, 0, 0.15);
-    --input-select-border-color: rgba(0, 0, 0, 0.15);
-	--input-background-color: #2a2d33;
-    --input-hover-bg-color: #f5f5f5;
-    --unread-color: #355C7D;
-    --unread-soft-color: #6C5B7B; /* for torrent group child item */
+	 --input-border-color: rgba(0, 0, 0, 0.15);
+	 --input-select-border-color: rgba(0, 0, 0, 0.15);
+	 --input-background-color: #2a2d33;
+	 --input-hover-bg-color: #f5f5f5;
+	 --unread-color: #355C7D;
+	 --unread-soft-color: #6C5B7B; /* for torrent group child item */
 
 	
 	   /* Font size */
