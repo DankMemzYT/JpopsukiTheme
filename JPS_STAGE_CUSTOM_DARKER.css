@@ -10,38 +10,37 @@
  * This stylesheet was taken from Apollo.rip and edited to be somewhat compatible with JPS.
  * Version: Custom
  */
- 
+
  /*Variables*/
  :root {
-    /** 
-     * CSS variable usage example: 
-     * 
+    /**
+     * CSS variable usage example:
+     *
      * background-color: var(--background-color);
      */
-	 
-	 /*Colors*/
-	 /*var(--alternate-background-color) discontinued*/
-	 --background-color: #1e2426;
-	 --box-bg-color: #1e2426; /*Only Current use is an outline of "New Messages #" */
-	 --table-background-color: #1e2426;
-	 --alternate-background-color: #262d30; /*Used for every second table row + read torrents*/
-	 --header-color: linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%);
-	 --menu-gradient: linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%);
-	 --accent-color: #A082BD;
-	 --webkit-color: #7C3861;
-	 --new-torrent: #262d30;
-	 --torrent-child: #2e363a;
-	 --box-shadow: pink;
-	 --sec-bg-color: #f5f5f5;
-	 --input-border-color: rgba(0, 0, 0, 0.15);
-	 --input-select-border-color: rgba(0, 0, 0, 0.15);
-	 --input-background-color: #2a2d33;
-	 --input-hover-bg-color: #f5f5f5;
-	 --unread-color: #355C7D;
-	 --unread-soft-color: #6C5B7B; /* for torrent group child item */
 
-	
-	   /* Font size */
+         /*Colors*/
+
+         --background-color: #1e2426;
+         --box-bg-color: #1e2426;
+         --table-background-color: #1e2426;
+         --header-color: linear-gradient( 45deg, #C85000, #006400 );
+         --menu-gradient: linear-gradient( 45deg, #C85000, #006400 );
+         --accent-color: #842d26;
+         --webkit-color: #842d26;
+         --new-torrent: #22282b;
+         --torrent-child: #262d30;
+         --box-shadow: pink;
+         --sec-bg-color: #f5f5f5;
+    --input-border-color: rgba(0, 0, 0, 0.15);
+    --input-select-border-color: rgba(0, 0, 0, 0.15);
+        --input-background-color: #1e2426;
+    --input-hover-bg-color: #f5f5f5;
+    --unread-color: #6d241e ;
+    --unread-soft-color: #842d26; /* for torrent group child item */
+
+
+           /* Font size */
     --fs-header-xxl: 30px;
     --fs-header-xl: 26px;
     --fs-header-l: 24px;
@@ -55,9 +54,9 @@
     --fs-label-s: 14px;
     --fs-label-xs: 12px;
     --fs-button: 14px;
-    --fs-button-s: 12px; 
-	 
-	    
+    --fs-button-s: 12px;
+
+
     /* Elements */
     --top-nav-height: 55px;
     --box-floating-shadow: 0 5px 7px rgba(0, 0, 0, 0.07);
@@ -115,7 +114,7 @@ body {
  box-sizing:border-box;
  line-height:1.6;
  font-size:12px;
- color:#404040;
+ color:#c6c9c9;
  background-color:var(--background-color);
 }
 h1,h2,h3,h4,h5,h6 {
@@ -125,8 +124,12 @@ h1,h2,h3,h4,h5,h6 {
  line-height:normal;
  color:#f0f0f0
 }
-h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+h1 a,h2 a,h3 a,h5 a,h6 a {
  color:var(--accent-color)
+}
+h4 a {
+        color:var(--accent-color);
+        text-shadow: 0 0 4px #414345
 }
 h1,h2 {
  font-size:23px
@@ -143,7 +146,6 @@ a {
 }
 a:hover {
  color:var(--accent-color);
- text-shadow: 0 0 2px #a74fc7;
 }
 b,strong {
  font-weight:600
@@ -176,8 +178,8 @@ blockquote {
  color:#fff;
  background-color: var(--accent-color);
 }
-table .rowa:nth-child(even),table .rowb:nth-child(even) {
- background-color:var(--alternate-background-color)
+table,table .rowa:nth-child(even),table .rowb:nth-child(even) {
+ background-color:var(--table-background-color)
 }
 table {
  margin:8px 0;
@@ -185,10 +187,10 @@ table {
  border-collapse:collapse;
 }
 table .rowa,table .rowb {
- border-top:2px solid var(--alternate-background-color);
+ border-top:2px solid var(--table-background-color)
 }
 table .rowa:nth-child(odd),table .rowb:nth-child(odd) {
- background-color:#33363d
+ background-color:#262d30;
 }
 table ul.options_list {
  margin:0;
@@ -424,7 +426,7 @@ margin-bottom: 0px;
  margin-left:8px
 }
 .last_read :before {
- content:'➜';
+ content:'Γ₧£';
  display:inline-block
 }
 #userinfo_minor:before,.linkbox br {
@@ -532,11 +534,11 @@ margin-bottom: 0px;
         top: 177px;
         width: 100%;
         padding: 0.6em 0;
-	      color: #444;
+              color: #444;
         text-align: center;
         background: var(--menu-gradient);
         font-size: 10.5pt;
-	      font-weight: 900;
+              font-weight: 900;
 }
 
 #menu ul li {
@@ -548,7 +550,7 @@ margin-bottom: 0px;
 
 #menu ul li a {
         padding: 0.6em 1.5%;
-        color: #404040;
+        color: #c6c9c9;
 }
 
 #menu ul li a:active {
@@ -557,6 +559,7 @@ margin-bottom: 0px;
 
 #menu ul li a:hover {
         background: transparent; /* Menu.. aka Home.. torrents.. artist, provides the hover options*/
+        text-decoration: underline;
 }
 
 /* Fixes userinfo_username at top left*/
@@ -596,33 +599,34 @@ margin-bottom: 0px;
 
 
 #userinfo img {
-	margin-top: -5px;
+        margin-top: -5px;
 }
 
 #userinfo ul {
-	display: inline;
-	margin: 0px 0.8%;
+        display: inline;
+        margin: 0px 0.8%;
 }
 
 #userinfo ul li {
-	position: relative;
-	display: inline;
-	margin: 0 0.1em;
-	line-height: 20px;
-	vertical-align: middle;
-	padding: 0px;
+        position: relative;
+        display: inline;
+        margin: 0 0.1em;
+        line-height: 20px;
+        vertical-align: middle;
+        padding: 0px;
 }
 
 #userinfo a {
-	color: #f0f0f0;
+        color: #f0f0f0;
 }
 #userinfo a:hover {
+        text-decoration: underline;
 }
 
 #userinfo b a {
-	font-weight: normal;
-	font-size: 0.9em;
-	font-weight: bold;
+        font-weight: normal;
+        font-size: 0.9em;
+        font-weight: bold;
 }
 
 /* Search Bar */
@@ -876,120 +880,120 @@ margin-bottom: 0px;
 /* IE doesn't appear to like a simple display:none in our header. Random things start fucking up pretty badly. */
 
 .torrent_table {
-	margin-left: 0.5px;
+        margin-left: 0.5px;
 }
 
 .torrent_table tr {
-	vertical-align: top;
+        vertical-align: top;
 }
 
 .torrent_table tr.torrent, .torrent_table tr.group {
-	font-weight: bold;
+        font-weight: bold;
 }
 
 .torrent_table tr.torrent_redline, .torrent_table tr.group_redline {
-	font-weight: bold;
+        font-weight: bold;
 }
 
 .torrent_table tr.group {
-	background-color: var(--alternate-background-color);
-	border: 2px solid #303030;
+        background-color: var(--table-background-color);
+        border: 2px solid #303030;
 }
 .torrent_table tr.group_torrent {
-	background-color: var(--alternate-background-color);
-	border: 2px solid #303030;
-	background-color: var(--torrent-child);
+        background-color: var(--table-background-color);
+        border: 2px solid #303030;
+        background-color: var(--torrent-child);
 }
 .torrent_table tr.torrent {
-	background-color: var(--alternate-background-color);
-	border: 2px solid #303030;
+        background-color: var(--table-background-color);
+        border: 2px solid #303030;
 }
 
 .torrent_table tr.group_redline {
          background-color: var(--new-torrent);
-		border: 1px solid #303030;
+                border: 1px solid #303030;
 }
 .torrent_table tr.group_torrent_redline {
         background-color: var(--torrent-child);
-		border: 1px solid #303030;
+                border: 1px solid #303030;
 }
 .torrent_table tr.torrent_redline {
         background-color: var(--new-torrent);
-		border: 1px solid #303030;
+                border: 1px solid #303030;
 }
 
 .torrent_table div.tags {
-	font-weight: normal;
+        font-weight: normal;
 }
 
 .torrent_table tr .center {
-	vertical-align: middle;
-	text-align: center;
+        vertical-align: middle;
+        text-align: center;
 }
 
 .group_torrent span {
-	float: right;
+        float: right;
 }
 
 .group_torrent_redline span {
-	float: right;
+        float: right;
 }
 
 .torrent span {
-	font-weight: normal;
-	float: right;
+        font-weight: normal;
+        float: right;
 }
 
 .torrent_redline span {
-	font-weight: normal;
-	float: right;
+        font-weight: normal;
+        float: right;
 }
 
 .nobr {
-	white-space: nowrap;
+        white-space: nowrap;
 }
 
 .hidden {
-	position: absolute;
-	left: -10000px;
+        position: absolute;
+        left: -10000px;
 }
 
 .hide {
-	display: none;
+        display: none;
 }
 
 /* Misc */
 
 input.hidden {
-	position: absolute;
-	display: none;
+        position: absolute;
+        display: none;
 }
 
 .curtain {
-	display: none;
-	position: fixed;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	z-index:1001;
-	-moz-opacity: 0.8;
-	opacity:.80;
-	filter: alpha(opacity=80);
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
 }
 
 .lightbox {
-	display: none;
-	position: fixed;
-	text-align: center;
-	top: 5%;
-	left: 5%;
-	width: 90%;
-	height: 90%;
-	padding: 0px;
-	z-index:1002;
-	overflow: auto;
+        display: none;
+        position: fixed;
+        text-align: center;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        padding: 0px;
+        z-index:1002;
+        overflow: auto;
 }
 
 /* Ratio Colors */
@@ -1025,110 +1029,86 @@ span.size10 { font-size:3em; }
 ul.thin { margin:0px 0px 0px 25px; padding:0px; }
 ul.thin li { margin:0px 0px; padding:0px; }
 
-/* User class */ 
+/* User class */
 
 a.permission_1,.permission_1 { /* Anthill Kicker */
-	color: #ffe743;
-	text-shadow: 0 0 3px #bac3db;
+        color: #ffe743;
+        text-shadow: 0 0 3px #bac3db;
 }
 a.permission_2,.permission_2 { /* User */
-	color: #ccc;
+        color: #ccc;
 }
 a.permission_3,.permission_3 { /* Member */
-	color: #ADD8E6;
+        color: #ADD8E6;
 }
 a.permission_4,.permission_4 { /* Power User */
-	color: #00cc66;
+        color: #00cc66;
 }
 a.permission_5,.permission_5 {
-	color: #3366CC;
+        color: #3366CC;
 }
 a.permission_6,.permission_6 { /* VIP */
-	color: #DFB301;
-	text-shadow: 0 0 3px #ff4444;
+        color: #DFB301;
+        text-shadow: 0 0 3px #ff4444;
 }
 a.permission_7,.permission_7 {
-	color: #FFFF66;
+        color: #FFFF66;
 }
 a.permission_8,.permission_8 { /* Radio Moderator */
-	color: #FE9A2E;
-	text-shadow: 0 0 3px #bac3db;
+        color: #FE9A2E;
+        text-shadow: 0 0 3px #bac3db;
 }
 a.permission_9,.permission_9 {
-	color: #99FFFF;
+        color: #99FFFF;
 }
 a.permission_10,.permission_10 {
-	color: #FFFF66;
+        color: #FFFF66;
     }
 a.permission_11,.permission_11 { /* Moderator */
-	color: #0099ff;
-text-shadow: 0 0 4px #FFB6C1;
-font-size: 10pt;
+        color: #0099ff;
+text-shadow: 0 0 3px #bac3db;
+font-size: 11pt;
 }
 a.permission_12,.permission_12 {
-	color: #CC0000;
+        color: #CC0000;
 }
 a.permission_13,.permission_13 {
-	color: #996666;
+        color: #996666;
 }
 a.permission_14,.permission_14 { /*Developer */
-	color: #F78181;
-	text-shadow: 0 0 3px #bac3db;
+        color: #F78181;
+        text-shadow: 0 0 3px #bac3db;
 }
 a.permission_15,.permission_15 { /* Sysop */
-	color: #ffff99;
-	text-shadow: 0 0 3px #bac3db;
+        color: #ffff99;
+        text-shadow: 0 0 3px #bac3db;
 }
 a.permission_20,.permission_20 { /* Donor */
-	color: #ff4444;
+        color: #ff4444;
 font-size: 9pt;
 }
 a.permission_21,.permission_21 { /* Restricted */
-	color: #666;;
+        color: #666;;
 }
 a.permission_22,.permission_22 { /* Super VIP */
-	color: #ff4444;
-	text-shadow: 0 0 3px #ff4444;	
+        color: #ff4444;
+        text-shadow: 0 0 3px #ff4444;
 }
 a.permission_23,.permission_23 { /* Christmas Elf */
-	color: #00cc66;
-	text-shadow: 0 0 3px #ff4444;
+        color: #00cc66;
+        text-shadow: 0 0 3px #bac3db;
 }
 .center {
 text-align: center;
 }
-
-/*Custom user icons*/ 
-/* PinkGhost https://jpopsuki.eu/user.php?id=193864*/
+/*PinkGhost*/
 a[href="user.php?id=193864"]::after {
-	    content: url(https://i.imgur.com/lG2Bd5v.gif);
-		vertical-align: -30%;
-		position: relative;
-		right: -2px
+            content: url(https://i.imgur.com/lG2Bd5v.gif);
+                vertical-align: -30%;
+                position: relative;
+                right: -2.5px
 }
-/*Beer - Zenova*/
-a[href="user.php?id=108162"]::after {
-	    content: url(https://i.imgur.com/N6Qy8Uh.png);
-		vertical-align: -16%;
-		position: relative;
-		right: -2px
-}
-/*Don - ZillaNation*/
-a[href="user.php?id=194033"]::after {
-	    content: url(https://i.imgur.com/N2YKOxM.png);
-		vertical-align: -16%;
-		position: relative;
-		right: -1px
-}
-/*ixGibson*/
-a[href="user.php?id=203279"]::after {
-	    content: url(https://i.imgur.com/vTBjQwz.png);
-		vertical-align: -16%;
-		position: relative;
-		right: -1px
-}
-
-
+/**/
 td {
 text-align: left;
 }
@@ -1181,9 +1161,4 @@ select option {
     box-shadow: inset 1px 2px 4px rgba(0,0,0,.3);
     color: #bbb;
     padding: 5px 7px;
-}
-
-/*Forum group headers*/
-tr.forum_group_header {
-	background-color: var(--alternate-background-color);
 }
